@@ -1,0 +1,21 @@
+{
+  "ModId": "P3RPC.PartyMember.FuukaOverhaul",
+  "ModName": "Fuuka Overhaul",
+  "ModAuthor": "CerebralPolicy",
+  "ModVersion": "1.0.0",
+  "ModDescription": "Description",
+  "ModDll": "P3RPC.PartyMember.FuukaOverhaul.dll",
+  "ModIcon": "Preview.png",
+  "ModR2RManagedDll32": "x86/P3RPC.PartyMember.FuukaOverhaul.dll",
+  "ModR2RManagedDll64": "x64/P3RPC.PartyMember.FuukaOverhaul.dll",
+  "ModNativeDll32": "",
+  "ModNativeDll64": "",
+  "IsLibrary": false,
+  "ReleaseMetadataFileName": "P3RPC.PartyMember.FuukaOverhaul.ReleaseMetadata.json",
+  "PluginData": {},
+  "IsUniversalMod": false,
+  "ModDependencies": [ "reloaded.sharedlib.hooks", "UnrealEssentials" ],
+  "OptionalDependencies": [],
+  "SupportedAppId": ["p3r.exe"],
+  "ProjectUrl": ""
+}
