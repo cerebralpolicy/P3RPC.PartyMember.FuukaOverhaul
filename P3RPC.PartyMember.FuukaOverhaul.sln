@@ -3,7 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.9.34622.214
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "P3RPC.PartyMember.FuukaOverhaul", "P3RPC.PartyMember.FuukaOverhaul.csproj", "{B297152F-AADA-4C25-B449-76E3E74007CD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P3RPC.PartyMember.FuukaOverhaul", "P3RPC.PartyMember.FuukaOverhaul.csproj", "{B297152F-AADA-4C25-B449-76E3E74007CD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Project.Utils", "Submodules\Project.Utils\Project.Utils.csproj", "{5A756F6F-A6E3-4F25-ACE6-F6F205E2914F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Unreal.ObjectsEmitter.Interfaces", "Submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj", "{DE20DD00-406B-4556-A2D0-EB4EC0C4CF9F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D6DFD5E2-1183-4722-A295-1761BD0B83A2}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +24,14 @@ Global
 		{B297152F-AADA-4C25-B449-76E3E74007CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B297152F-AADA-4C25-B449-76E3E74007CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B297152F-AADA-4C25-B449-76E3E74007CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A756F6F-A6E3-4F25-ACE6-F6F205E2914F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A756F6F-A6E3-4F25-ACE6-F6F205E2914F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A756F6F-A6E3-4F25-ACE6-F6F205E2914F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A756F6F-A6E3-4F25-ACE6-F6F205E2914F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE20DD00-406B-4556-A2D0-EB4EC0C4CF9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE20DD00-406B-4556-A2D0-EB4EC0C4CF9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE20DD00-406B-4556-A2D0-EB4EC0C4CF9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE20DD00-406B-4556-A2D0-EB4EC0C4CF9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

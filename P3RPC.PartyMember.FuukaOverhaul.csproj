@@ -17,6 +17,28 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Redirector\ModAssets\**" />
+    <Compile Remove="Redirector\Modules\**" />
+    <Compile Remove="Redirector\TypesReplaced\**" />
+    <Compile Remove="Submodules\**" />
+    <EmbeddedResource Remove="Redirector\ModAssets\**" />
+    <EmbeddedResource Remove="Redirector\Modules\**" />
+    <EmbeddedResource Remove="Redirector\TypesReplaced\**" />
+    <EmbeddedResource Remove="Submodules\**" />
+    <None Remove="Redirector\ModAssets\**" />
+    <None Remove="Redirector\Modules\**" />
+    <None Remove="Redirector\TypesReplaced\**" />
+    <None Remove="Submodules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Redirector\AssetDictionary.cs" />
+    <Compile Remove="Redirector\Redirector.cs" />
+    <Compile Remove="Utils\CompareAssets.cs" />
+    <Compile Remove="Utils\Pathlogic.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ReloadedLinkRoots Include="P3RPC.PartyMember.FuukaOverhaul" />
     <!-- Add assemblies to be trimmed. You might need to add their dependencies too!  -->
     <!-- <ReloadedLinkAssemblies Include="Reloaded.Memory" /> -->
@@ -36,203 +58,236 @@
     <Content Include="ModConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_H001_00_FuHaMk.uasset">
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H000_00_Col.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset">
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H000_00_MkA.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000_PhysicsAsset.uasset">
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H000_00_MkB.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052.uasset">
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H000_00_ShC.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052_PhysicsAsset.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuBaMk.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_Col.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuGlTr.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_Col.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuMeMk.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkA.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_H001_00_FuHaMk.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkA.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H010.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkB.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H011.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkB.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H062.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_ShC.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H063.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_ShC.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_Col.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_Col.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkA.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkA.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkA.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkA.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkB.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkB.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkB.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkB.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_ShC.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.uasset">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_ShC.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Hair\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.ubulk">
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_Col.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuBaMk.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_Col.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuGlTr.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkA.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuMeMk.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkA.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C005_00_FuBaMk.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkB.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C005_00_FuMeMk.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkB.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C005_00_FuSkMk.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_ShC.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_BaseSkelton.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_ShC.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_BaseSkelton_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_Col.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_BaseSkelton_Skeleton.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_Col.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C001.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkA.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C001_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkA.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C002.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkB.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C002_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkB.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C005.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C005_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C006.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C106.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C006_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C051.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C051_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C906.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C052.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C906_PhysicsAsset.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C052_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C102.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000_PhysicsAsset.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C102_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H001.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C104.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H001_PhysicsAsset.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C104_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C106.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052_PhysicsAsset.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C106_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H061.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C155.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\Ponytail\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H061_PhysicsAsset.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C155_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuBaMk.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C156.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuGlTr.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C156_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuMeMk.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C157.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_H001_00_FuHaMk.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C157_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C502.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C502_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkA.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C503.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkA.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C503_PhysicsAsset.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkB.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkB.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.ubulk">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_ShC.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkA.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_ShC.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkA.ubulk">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_Col.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkB.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_Col.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_MkB.ubulk">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkA.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_ShC.uasset">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkA.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\Outfits\ModernGlasses\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_ShC.ubulk">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkB.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_MkB.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_ShC.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H001_00_ShC.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_Col.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_Col.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkA.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkA.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkB.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_MkB.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Preview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -243,6 +298,20 @@
     <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.4.0" ExcludeAssets="runtime" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />
     <PackageReference Include="UnrealEssentials.Interfaces" Version="1.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Assets\Hair\Ponytail\" />
+    <Folder Include="Modules\02_Patches\" />
+    <Folder Include="Modules\04_Debug\" />
+    <Folder Include="Modules\Textures\" />
+    <Folder Include="Modules\Vanilla\" />
+    <Folder Include="Redirector\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Submodules\Project.Utils\Project.Utils.csproj" />
+    <ProjectReference Include="Submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj" />
   </ItemGroup>
 
 </Project>

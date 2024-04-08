@@ -25,10 +25,10 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
 
             The `DefaultValue` attribute is used as part of the `Reset` button in Reloaded-Launcher.
         */
-        [DisplayName("Enable Easter Eggs")]
+        [DisplayName("Debug Mode")]
         [Description("This is a bool.")]
         [DefaultValue(true)]
-        public bool EasterEggs { get; set; } = true;
+        public bool DEBUG_MODE { get; set; } = true;
 
         [DisplayName("Glasses Setting")]
         [Description("This is an enumerable.")]
@@ -37,8 +37,8 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
 
         public enum GlassesSetting
         {
-            Modern,
-            NONE
+            NONE = 0,
+            Modern = 1,
         }
         [DisplayName("Enum")]
         [Description("This is an enumerable.")]
@@ -47,9 +47,9 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
 
         public enum HairstyleSetting
         {
-            Ponytail,
-            Bangs_Ponytail,
-            Vanilla
+            Vanilla,
+            Ponytail = 10,
+            Bangs_Ponytail = 20,
         }
     }
 
