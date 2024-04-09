@@ -58,6 +58,15 @@
     <Content Include="ModConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_TiFiOpSp.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Title.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Title.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H000_00_Col.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -92,6 +101,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H063.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_Title_01.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_Title_10.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_Title_11.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C001_02_Col.uasset">

@@ -174,6 +174,7 @@ public class Mod : ModBase // <= Do not Remove.
 
         var H000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, normalHair);
         var H052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, seesHair);
+        var Title = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, normalHair);
         // LOAD HAIRSTYLE
 
         if (_configuration.DEBUG_MODE)
@@ -198,6 +199,8 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(H000, newH000);
                 var newH052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newSEESHair);
                 Redirect(H052, newH052);
+                var newTitle = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, newNormalHair);
+                Redirect(Title, newTitle);
             }
         }
         var patchesApplied = 0;

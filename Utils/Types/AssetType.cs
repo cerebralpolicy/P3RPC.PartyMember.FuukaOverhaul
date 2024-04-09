@@ -14,6 +14,8 @@ public enum AssetType
     CombineAnim,
     EventAnim,
     FaceAnim,
+
+    TitleMesh,
 }
 
 public enum UsedAssetType
