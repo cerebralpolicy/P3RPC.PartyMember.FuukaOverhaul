@@ -55,13 +55,9 @@ public class Mod : ModBase // <= Do not Remove.
     private readonly IModConfig _modConfig;
 
     private readonly IUnrealEssentials? unrealEssentials;
-    private bool haveUnrealEssentials;
     private readonly IUnreal? unrealEmitter;
-    private bool haveUnrealEmitter;
 
     public string? modDirectory;
-
-    private IEnumerable<string>? activeMods;
 
     public Mod(ModContext context)
     {
@@ -72,47 +68,10 @@ public class Mod : ModBase // <= Do not Remove.
         _configuration = context.Configuration;
         _modConfig = context.ModConfig;
 
-        haveUnrealEssentials = false;
-        haveUnrealEmitter = false;
+        var haveUnrealEssentials = false;
+        var haveUnrealEmitter = false;
         // SET MOD DIRECTORY
-        var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);
-        if (modDir != null)
-        {
-            modDirectory = modDir;
-        }
-        else
-        {
-            modDirectory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-        }
-
-
-
-        Dictionary<string,Patch> PatchLibrary = new Dictionary<string, Patch> { };
-
-        ModGenericTuple<IModConfigV1>[] mods = _modLoader.GetActiveMods();
-
-        if (mods.Length > 0)
-        {
-            foreach (IModConfigV1 mod in mods) {
-                var CheckMod = new Patch(mod);
-                    CheckMod.ThisPatchExists.Equals(PatchExists(mod.ModId));
-                    CheckMod.ThisPatchLoads.Equals(PatchLoads(mod.ModId));
-                if (CheckMod.ThisPatchExists)
-                {
-                    PatchLibrary.Add(mod.ModId, CheckMod);
-                    var name = CheckMod.ModName;
-                    var author = CheckMod.ModAuthor;
-                    if (CheckMod.ThisPatchLoads)
-                    {
-                        _logger.WriteLine($"[{modName}] | Compatibility patch found for \"{name}\" by {author}. This patch will be automatically applied.",System.Drawing.Color.PowderBlue);
-                    }
-                    else
-                    {
-                        _logger.WriteLine($"[{modName}] | Compatibility patch directory found for \"{name}\" by {author}, however it has no content and will not be applied.", System.Drawing.Color.Yellow);
-                    }
-                }
-            }
-        }
+        var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);  
 
         // For more information about this template, please see
         // https://reloaded-project.github.io/Reloaded-II/ModTemplate/
@@ -159,10 +118,9 @@ public class Mod : ModBase // <= Do not Remove.
 
         // LOAD TEXTURES
 
-        LoadModule(unrealEssentials, getModule(Module.Core));
+        LoadModule(unrealEssentials, modDir, Module.Core);
 
         var hairStyle = Enum.GetName(_configuration.hairstyleSetting);
-        var glassesStyle = Enum.GetName(_configuration.glassesSetting);
         var hairOffset = ((int)_configuration.hairstyleSetting);
         var glassesOffset = ((int)_configuration.glassesSetting);
 
@@ -180,13 +138,13 @@ public class Mod : ModBase // <= Do not Remove.
         if (_configuration.DEBUG_MODE)
         {
             // MANUAL OVERRIDES
-            LoadModule(unrealEssentials, getModule(Module.Debug));
+            LoadModule(unrealEssentials, modDir, Module.Debug);
         }
 
         if (hairStyle != null)
         {
-            LoadModule(unrealEssentials, getModule(Module.Hair));
-            if (hairStyle != "Vanilla")
+            LoadModule(unrealEssentials, modDir, Module.Hair);
+            if (hairOffset != 0)
             {
                 // PONYTAILS HATE BONNETS, REDIRECT TO ALT MAID OUTFIT
                 var C106 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 106);
@@ -203,44 +161,28 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(Title, newTitle);
             }
         }
-        var patchesApplied = 0;
-        foreach (KeyValuePair<string, Patch> patch in PatchLibrary)
-        {
-            var thisPatch = patch.Value;
-            if (thisPatch.ThisPatchLoads)
-            {
-                var thisPatchID = thisPatch.ModID;
-                var name = thisPatch.ModName;
-                var author = thisPatch.ModAuthor;
-                var thisPatchModule = Path.Combine("02_Patches", thisPatchID);
-                LoadModule(unrealEssentials, thisPatchModule);
-                patchesApplied++;
-                _logger.WriteLine($"[{modName}] | Compatibility patch for \"{name}\" by {author} applied.", System.Drawing.Color.PowderBlue);
-            }
-        }
-        if (patchesApplied > 0)
-        {
-            _logger.WriteLine($"[{modName}] | All compatibility patches applied.", System.Drawing.Color.PowderBlue);
-        }
     }
-    private void LoadModule(IUnrealEssentials unreal, string module)
+    private void LoadModule(IUnrealEssentials unreal, string modDir, Module module, string patch = "null")
     {
-        try
+        if (patch == "null")
         {
-            var modulePath = Path.Combine(modDirectory, "Modules", module);
-            if (Directory.Exists(modulePath))
+            try
             {
-                if (Directory.Exists(Path.Combine(modulePath, "P3R")))
+                var modulePath = getModule(modDir, module);
+                if (Directory.Exists(modulePath))
                 {
-                    unreal.AddFromFolder(modulePath);
+                    if (Directory.Exists(Path.Combine(modulePath, "P3R")))
+                    {
+                        unreal.AddFromFolder(modulePath);
+                    }
                 }
             }
-        }
-        catch (Exception ex)
-        {
-            if (module == null)
+            catch (Exception ex)
             {
-                throw new ArgumentNullException($"No {module} module found", ex);
+                if (getModule(modDir, module) == null)
+                {
+                    throw new ArgumentNullException($"No {module} module found", ex);
+                }
             }
         }
     }
@@ -261,21 +203,6 @@ public class Mod : ModBase // <= Do not Remove.
             unrealEmitter.AssignFName(modName, vanFNames.AssetPath, modFNames.AssetPath);
         }
     }
-    private string PatchPath (string ReloadedModID)
-    {
-        return Path.Combine(modDirectory, "Modules", "02_Patches", ReloadedModID);
-    }
-    private bool PatchExists (string ReloadedModID)
-    {
-        var patchPath = PatchPath(ReloadedModID);
-        return Directory.Exists(patchPath);
-    }
-    private bool PatchLoads(string ReloadedModID)
-    {
-        var ioEmulator = Path.Combine(PatchPath(ReloadedModID), "P3R");
-        return Directory.Exists(ioEmulator);
-    }
-
     private record AssetFNames(string assetFile)
     {
         public string AssetName { get; } = Path.GetFileNameWithoutExtension(assetFile);
@@ -283,17 +210,6 @@ public class Mod : ModBase // <= Do not Remove.
         public string AssetPath { get; } = Assets.GetAssetPath(assetFile);
     }
 
-    private record Patch (IModConfigV1 Mod)
-    {
-        public string ModID { get; } = Mod.ModId;
-
-        public string ModName { get; } = Mod.ModName;
-
-        public string ModAuthor { get; } = Mod.ModAuthor;
-
-        public bool ThisPatchExists;
-        public bool ThisPatchLoads;
-    }
     private enum Module
     {
         Core = 0,
@@ -303,7 +219,7 @@ public class Mod : ModBase // <= Do not Remove.
         Debug = 4,
     }
 
-    private string getModule (Module module)
+    private string getModule (string modDir, Module module)
     {
         var moduleID = ((int)module);
         var moduleName = Enum.GetName(typeof(Module), moduleID);
@@ -311,7 +227,7 @@ public class Mod : ModBase // <= Do not Remove.
         
         try
         {
-            var modulePath = Path.Combine(modDirectory, "Modules", moduleFolder);
+            var modulePath = Path.Combine(modDir, "Modules", moduleFolder);
             return modulePath;
         }
         catch (Exception e)

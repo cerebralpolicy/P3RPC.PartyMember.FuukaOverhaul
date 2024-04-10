@@ -178,7 +178,7 @@ param (
     $GitHubFallbackPattern = "", # For migrating from legacy build script.
     $GitHubInheritVersionFromTag = $True, # Uses version determined from release tag as opposed to metadata file in latest release.
 
-    $GameBananaItemId = 333681, # From mod page URL.
+    $GameBananaItemId = 506162, # From mod page URL.
 
     $NuGetPackageId = "P3RPC.PartyMember.FuukaOverhaul",
     $NuGetFeedUrl = "http://packages.sewer56.moe:5000/v3/index.json",
@@ -187,7 +187,7 @@ param (
     ## => User: Publish Config
     $PublishGeneric    = $False,
     $PublishNuGet      = $False,
-    $PublishGameBanana = $False
+    $PublishGameBanana = $True
 )
 
 ## => User: Publish Output

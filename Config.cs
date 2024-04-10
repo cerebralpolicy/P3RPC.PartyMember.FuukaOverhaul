@@ -27,8 +27,8 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
         */
         [DisplayName("Debug Mode")]
         [Description("This is a bool.")]
-        [DefaultValue(true)]
-        public bool DEBUG_MODE { get; set; } = true;
+        [DefaultValue(false)]
+        public bool DEBUG_MODE { get; set; } = false;
 
         [DisplayName("Glasses Setting")]
         [Description("This is an enumerable.")]
@@ -49,7 +49,7 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
         {
             Vanilla,
             Ponytail = 10,
-            Bangs_Ponytail = 20,
+           // Bangs_Ponytail = 20,
         }
     }
 
