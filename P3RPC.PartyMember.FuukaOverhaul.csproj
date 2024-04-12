@@ -79,6 +79,18 @@
     <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H000_00_ShC.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Field\Resource\F102\133_FukaRoom\S_F102_133_Books01.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Field\Resource\F102\133_FukaRoom\S_F102_133_Cartonbox01.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Field\Resource\F102\133_FukaRoom\T_F102_133_Books.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\00_Core\P3R\Content\Xrd777\Field\Resource\F102\133_FukaRoom\T_F102_133_Books.ubulk">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_FuBaMk.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
