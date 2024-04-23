@@ -40,7 +40,7 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
             NONE = 0,
             Modern = 1,
         }
-        [DisplayName("Enum")]
+        [DisplayName("Hairstyle")]
         [Description("This is an enumerable.")]
         [DefaultValue(HairstyleSetting.Ponytail)]
         public HairstyleSetting hairstyleSetting { get; set; } = HairstyleSetting.Ponytail;

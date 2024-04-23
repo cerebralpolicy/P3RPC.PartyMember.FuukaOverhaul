@@ -12,7 +12,11 @@ public enum AssetType
 
     CommonAnim,
     CombineAnim,
+    DungeonAnim,
     EventAnim,
+    BaseAnim,
+    CostumeAnim,
+    HairAnim,
     FaceAnim,
 
     TitleMesh,

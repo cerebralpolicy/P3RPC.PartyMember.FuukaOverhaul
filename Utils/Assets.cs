@@ -33,6 +33,7 @@ internal static class Assets
             AssetType.FaceMesh => FormatAssetPath($"/Game/Xrd777/Characters/Player/PC{FormatCharID(chr)}/Models/SK_PC{FormatCharID(chr)}_F{assetID:000}", chr),
             AssetType.CommonAnim => FormatAssetPath($"/Game/Xrd777/Characters/Data/DataAsset/Player/PC{FormatCharID(chr)}/DA_PC{FormatCharID(chr)}_CommonAnim", chr),
             AssetType.CombineAnim => FormatAssetPath($"/Game/Xrd777/Characters/Data/DataAsset/Player/PC{FormatCharID(chr)}/DA_PC{FormatCharID(chr)}_CombineAnim", chr),
+            AssetType.DungeonAnim => FormatAssetPath($"/Game/Xrd777/Characters/Data/DataAsset/Player/PC{FormatCharID(chr)}/DA_PC{FormatCharID(chr)}_DungeonAnim", chr),
             AssetType.EventAnim => FormatAssetPath($"/Game/Xrd777/Characters/Data/DataAsset/Player/PC{FormatCharID(chr)}/DA_PC{FormatCharID(chr)}_EventAnim", chr),
             AssetType.FaceAnim => FormatAssetPath($"/Game/Xrd777/Characters/Data/DataAsset/Player/PC{FormatCharID(chr)}/DA_PC{FormatCharID(chr)}_FaceAnim", chr),
             AssetType.TitleMesh => FormatAssetPath($"/Game/Xrd777/Characters/Player/PC{FormatCharID(chr)}/Models/SK_PC{FormatCharID(chr)}_Title_{assetID:00}", chr),

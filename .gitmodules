@@ -4,3 +4,9 @@
 [submodule "Submodules/Project.Utils"]
 	path = Submodules/Project.Utils
 	url = https://github.com/T-PoseRatkechi/Project.Utils.git
+[submodule "Submodules/P3R.CostumeFramework"]
+	path = Submodules/P3R.CostumeFramework
+	url = https://github.com/MirrorTuneZM/P3R.CostumeFramework.git
+[submodule "Submodules/Unreal.AtlusScript"]
+	path = Submodules/Unreal.AtlusScript
+	url = https://github.com/MirrorTuneZM/Unreal.AtlusScript.git

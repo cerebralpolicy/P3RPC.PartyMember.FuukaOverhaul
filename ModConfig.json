@@ -2,7 +2,7 @@
   "ModId": "P3RPC.PartyMember.FuukaOverhaul",
   "ModName": "Fuuka Yamagishi Evolved",
   "ModAuthor": "CerebralPolicy",
-  "ModVersion": "1.0.0",
+  "ModVersion": "1.0.2",
   "ModDescription": "Description",
   "ModDll": "P3RPC.PartyMember.FuukaOverhaul.dll",
   "ModIcon": "Preview.png",
@@ -15,7 +15,7 @@
   "PluginData": {},
   "IsUniversalMod": false,
   "ModDependencies": [ "reloaded.sharedlib.hooks", "UnrealEssentials", "Unreal.ObjectsEmitter.Reloaded" ],
-  "OptionalDependencies": [],
+  "OptionalDependencies": ["P3R.CostumeFramework"],
   "SupportedAppId": ["p3r.exe"],
   "ProjectUrl": ""
 }

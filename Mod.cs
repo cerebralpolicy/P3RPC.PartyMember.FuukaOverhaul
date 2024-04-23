@@ -1,4 +1,5 @@
 ﻿using P3RPC.PartyMember.FuukaOverhaul.Configuration;
+using P3RPC.PartyMember.FuukaOverhaul.Modules;
 using P3RPC.PartyMember.FuukaOverhaul.Template;
 using P3RPC.PartyMember.FuukaOverhaul.Utils;
 using P3RPC.PartyMember.FuukaOverhaul.Utils.Types;
@@ -6,12 +7,7 @@ using Reloaded.Hooks.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using Unreal.ObjectsEmitter.Interfaces;
 using UnrealEssentials.Interfaces;
-using System.Reflection;
-using System.Data;
-using Reloaded.Mod.Interfaces.Internal;
-using System.Collections.Immutable;
-using Reloaded.Mod.Interfaces.Structs.Enums;
-using System.Collections;
+using P3R.CostumeFramework.Interfaces;
 
 namespace P3RPC.PartyMember.FuukaOverhaul;
 
@@ -54,8 +50,17 @@ public class Mod : ModBase // <= Do not Remove.
     /// </summary>
     private readonly IModConfig _modConfig;
 
+    /// <summary>
+    /// MANDATORY DEPENDENCIES
+    /// </summary>
     private readonly IUnrealEssentials? unrealEssentials;
     private readonly IUnreal? unrealEmitter;
+
+    /// <summary>
+    /// Optional Dependencies
+    /// </summary>
+
+    private readonly ICostumeApi? costumeApi;
 
     public string? modDirectory;
 
@@ -70,6 +75,7 @@ public class Mod : ModBase // <= Do not Remove.
 
         var haveUnrealEssentials = false;
         var haveUnrealEmitter = false;
+        var haveCostumeApi = false;
         // SET MOD DIRECTORY
         var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);  
 
@@ -89,7 +95,7 @@ public class Mod : ModBase // <= Do not Remove.
         }
         else
         {
-            haveUnrealEssentials.Equals(true);
+            haveUnrealEssentials = true;
         }
         this.unrealEssentials = unrealEssentials;
 
@@ -101,10 +107,22 @@ public class Mod : ModBase // <= Do not Remove.
         }
         else
         {
-            haveUnrealEmitter.Equals(true);
+            haveUnrealEmitter = true;
             _logger.WriteLine($"[{modName}] | Unreal Emitter loaded: {haveUnrealEmitter.ToString()}");
         }
         this.unrealEmitter = unrealEmitter;
+
+        var costumeController = _modLoader.GetController<ICostumeApi>();
+        if (costumeController == null || !costumeController.TryGetTarget(out var costumeApi))
+        {
+            return;
+        }
+        else
+        {
+            haveCostumeApi = true;
+            _logger.WriteLine($"[{modName}] | Costume API loaded: {haveCostumeApi.ToString()}");
+        }
+        this.costumeApi = costumeApi;
 
         // For more information about this template, please see
         // https://reloaded-project.github.io/Reloaded-II/ModTemplate/
@@ -161,6 +179,16 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(Title, newTitle);
             }
         }
+
+        if (haveCostumeApi)
+        {
+
+            var C104 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 104);
+            var newC104 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 904);
+            Redirect(C104, newC104);
+            var thisModule = getModule(modDir,Module.Costumes);
+            CostumeModule.LoadCostumes(costumeApi, unrealEssentials, thisModule);
+        }
     }
     private void LoadModule(IUnrealEssentials unreal, string modDir, Module module, string patch = "null")
     {
@@ -214,7 +242,7 @@ public class Mod : ModBase // <= Do not Remove.
     {
         Core = 0,
         Hair = 1,
-        Patches = 2,
+        Costumes = 2,
         CharCreator = 3,
         Debug = 4,
     }

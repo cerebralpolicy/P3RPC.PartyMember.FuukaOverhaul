@@ -1,10 +1,10 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0-windows</TargetFramework>
+    <TargetFramework>net8.0-windows8.0</TargetFramework>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <LangVersion>10.0</LangVersion>
+    <LangVersion>12.0</LangVersion>
     <Nullable>enable</Nullable>
     <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
     <OutputPath>$(RELOADEDIIMODS)/P3RPC.PartyMember.FuukaOverhaul</OutputPath>
@@ -17,21 +17,38 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Modules\02_Patches\**" />
+    <Compile Remove="Modules\Textures\**" />
+    <Compile Remove="Modules\Vanilla\**" />
     <Compile Remove="Redirector\ModAssets\**" />
     <Compile Remove="Redirector\Modules\**" />
     <Compile Remove="Redirector\TypesReplaced\**" />
+    <Compile Remove="Ref\**" />
     <Compile Remove="Submodules\**" />
+    <EmbeddedResource Remove="Modules\02_Patches\**" />
+    <EmbeddedResource Remove="Modules\Textures\**" />
+    <EmbeddedResource Remove="Modules\Vanilla\**" />
     <EmbeddedResource Remove="Redirector\ModAssets\**" />
     <EmbeddedResource Remove="Redirector\Modules\**" />
     <EmbeddedResource Remove="Redirector\TypesReplaced\**" />
+    <EmbeddedResource Remove="Ref\**" />
     <EmbeddedResource Remove="Submodules\**" />
+    <None Remove="Modules\02_Patches\**" />
+    <None Remove="Modules\Textures\**" />
+    <None Remove="Modules\Vanilla\**" />
     <None Remove="Redirector\ModAssets\**" />
     <None Remove="Redirector\Modules\**" />
     <None Remove="Redirector\TypesReplaced\**" />
+    <None Remove="Ref\**" />
     <None Remove="Submodules\**" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Remove="RAWASSETS\02_Costumes\Costumes\CostumeFactory.cs" />
+    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\Costume.cs" />
+    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\CostumeConfig.cs" />
+    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\CostumeModule.cs" />
+    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\GameCostumes.cs" />
     <Compile Remove="Redirector\AssetDictionary.cs" />
     <Compile Remove="Redirector\Redirector.cs" />
     <Compile Remove="Utils\CompareAssets.cs" />
@@ -50,6 +67,11 @@
   <ItemGroup>
     <None Remove="ModConfig.json" />
     <None Remove="BuildLinked.ps1" />
+    <None Remove="Modules\02_Costumes\CostumeOverride.yaml" />
+    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\config.yaml" />
+    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\description.msg" />
+    <None Remove="Modules\Resources\costumes.json" />
+    <None Remove="Modules\Resources\descriptions.msg" />
     <None Remove="Reloaded.Trimming.targets" />
     <None Remove="Reloaded.Checks.targets" />
   </ItemGroup>
@@ -58,6 +80,17 @@
     <Content Include="ModConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Modules\02_Costumes\CostumeOverride.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\config.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\description.msg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <EmbeddedResource Include="Modules\Resources\costumes.json" />
+    <EmbeddedResource Include="Modules\Resources\descriptions.msg" />
     <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C001_02_TiFiOpSp.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -196,7 +229,13 @@
     <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C106.uasset">
+    <None Update="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuBaMk.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuMeMk.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Update="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuSkMk.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Update="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset">
@@ -322,9 +361,13 @@
     <None Update="Preview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="RAWASSETS\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C904.uasset">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="p3rpc.nativetypes.Interfaces" Version="1.2.8" />
     <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.4.0" ExcludeAssets="runtime" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />
     <PackageReference Include="UnrealEssentials.Interfaces" Version="1.0.0" />
@@ -332,16 +375,35 @@
 
   <ItemGroup>
     <Folder Include="Assets\Hair\Ponytail\" />
-    <Folder Include="Modules\02_Patches\" />
+    <Folder Include="RAWASSETS\02_Costumes\Data\Hooks\" />
     <Folder Include="Modules\04_Debug\" />
-    <Folder Include="Modules\Textures\" />
-    <Folder Include="Modules\Vanilla\" />
+    <Folder Include="Native\" />
+    <Folder Include="Costumes\" />
+    <Folder Include="RAWASSETS\02_Costumes\Utils\Services\" />
+    <Folder Include="RAWASSETS\P3R\Content\Xrd777\" />
+    <Folder Include="RAWASSETS\P3R\Content\Xrd777\Characters\Player\PC0006\Models\" />
     <Folder Include="Redirector\" />
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="RAWASSETS\02_Costumes\Costumes\CostumeFactory.cs" />
+    <None Include="RAWASSETS\02_Costumes\Data\Models\Costume.cs" />
+    <None Include="RAWASSETS\02_Costumes\Costumes\Models\CostumeConfig.cs" />
+    <None Include="RAWASSETS\02_Costumes\Costumes\Models\CostumeModule.cs" />
+    <None Include="RAWASSETS\02_Costumes\Data\Models\GameCostumes.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Submodules\P3R.CostumeFramework\P3R.CostumeFramework.Interfaces\P3R.CostumeFramework.Interfaces.csproj" />
     <ProjectReference Include="Submodules\Project.Utils\Project.Utils.csproj" />
+    <ProjectReference Include="Submodules\Unreal.AtlusScript\Unreal.AtlusScript.Interfaces\Unreal.AtlusScript.Interfaces.csproj" />
     <ProjectReference Include="Submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Project.Utils">
+      <HintPath>Project.Utils</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
