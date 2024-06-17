@@ -2,12 +2,15 @@
 using P3RPC.PartyMember.FuukaOverhaul.Modules;
 using P3RPC.PartyMember.FuukaOverhaul.Template;
 using P3RPC.PartyMember.FuukaOverhaul.Utils;
+using static P3RPC.PartyMember.FuukaOverhaul.Utils.Lists.BustupsReplaced;
 using P3RPC.PartyMember.FuukaOverhaul.Utils.Types;
 using Reloaded.Hooks.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using Unreal.ObjectsEmitter.Interfaces;
 using UnrealEssentials.Interfaces;
 using P3R.CostumeFramework.Interfaces;
+using P3RPC.PartyMember.FuukaOverhaul.Overrides.Types;
+using System.Drawing;
 
 namespace P3RPC.PartyMember.FuukaOverhaul;
 
@@ -16,8 +19,6 @@ namespace P3RPC.PartyMember.FuukaOverhaul;
 /// </summary>
 public class Mod : ModBase // <= Do not Remove.
 {
-
-    public const string modName = "P3RPC.PartyMember.FuukaOverhaul";
 
     /// <summary>
     /// Provides access to the mod loader API.
@@ -55,12 +56,13 @@ public class Mod : ModBase // <= Do not Remove.
     /// </summary>
     private readonly IUnrealEssentials? unrealEssentials;
     private readonly IUnreal? unrealEmitter;
+    private readonly ICostumeApi? _costumeApi;
 
     /// <summary>
     /// Optional Dependencies
     /// </summary>
 
-    private readonly ICostumeApi? costumeApi;
+    public const string modName = "P3RPC.PartyMember.FuukaOverhaul";
 
     public string? modDirectory;
 
@@ -73,36 +75,36 @@ public class Mod : ModBase // <= Do not Remove.
         _configuration = context.Configuration;
         _modConfig = context.ModConfig;
 
-        var haveUnrealEssentials = false;
-        var haveUnrealEmitter = false;
-        var haveCostumeApi = false;
+        // INIT DEPENDENCIES
+
+        // INIT PROJECT.UTILS LOGGER
+        Log.Initialize(modName, _logger, Color.White);
+        Log.LogLevel = _configuration.LogLevel;
+
+        bool haveUnrealEssentials;
+        bool haveUnrealEmitter;
         // SET MOD DIRECTORY
         var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);  
-
-        // For more information about this template, please see
-        // https://reloaded-project.github.io/Reloaded-II/ModTemplate/
-
-        // If you want to implement e.g. unload support in your mod,
-        // and some other neat features, override the methods in ModBase.
-
-        // TODO: Implement some mod logic
 
         var unrealEssentialsController = _modLoader.GetController<IUnrealEssentials>();
         if (unrealEssentialsController == null || !unrealEssentialsController.TryGetTarget(out var unrealEssentials))
         {
-            _logger.WriteLine($"[{modName}] | [My Mod] unable to get controller for Unreal Essentials.", System.Drawing.Color.Red);
+            Log.Error("Unable to get controller for Unreal Essentials.");
+//            _logger.WriteLine($"[{modName}] | [My Mod] Unable to get controller for Unreal Essentials.", System.Drawing.Color.Red);
             return;
         }
         else
         {
-            haveUnrealEssentials = true;
+            var check = true;
+            haveUnrealEssentials = check;
         }
         this.unrealEssentials = unrealEssentials;
 
         var unrealEmitterController = _modLoader.GetController<IUnreal>();
         if (unrealEmitterController == null || !unrealEmitterController.TryGetTarget(out var unrealEmitter))
         {
-            _logger.WriteLine($"[{modName}] | [My Mod] unable to get controller for Unreal Object Emitters.", System.Drawing.Color.Red);
+            Log.Error("Unable to get controller for Unreal Object Emitters.");
+            //            _logger.WriteLine($"[{modName}] | [My Mod] unable to get controller for Unreal Object Emitters.", System.Drawing.Color.Red);
             return;
         }
         else
@@ -112,35 +114,26 @@ public class Mod : ModBase // <= Do not Remove.
         }
         this.unrealEmitter = unrealEmitter;
 
-        var costumeController = _modLoader.GetController<ICostumeApi>();
-        if (costumeController == null || !costumeController.TryGetTarget(out var costumeApi))
+        var costumeApiController = _modLoader.GetController<ICostumeApi>();
+        if (costumeApiController == null || !costumeApiController.TryGetTarget(out var costumeApi))
         {
+            Log.Error("Unable to get controller for Costume Framework.");
             return;
         }
-        else
-        {
-            haveCostumeApi = true;
-            _logger.WriteLine($"[{modName}] | Costume API loaded: {haveCostumeApi.ToString()}");
-        }
-        this.costumeApi = costumeApi;
+        _costumeApi = costumeApi;
 
-        // For more information about this template, please see
-        // https://reloaded-project.github.io/Reloaded-II/ModTemplate/
-
-        // If you want to implement e.g. unload support in your mod,
-        // and some other neat features, override the methods in ModBase.
-
-        // TODO: Implement some mod logic
-
-
+        // END INIT DEPENDENCIES
 
         // LOAD TEXTURES
 
         LoadModule(unrealEssentials, modDir, Module.Core);
 
         var hairStyle = Enum.GetName(_configuration.hairstyleSetting);
-        var hairOffset = ((int)_configuration.hairstyleSetting);
-        var glassesOffset = ((int)_configuration.glassesSetting);
+        var hairOffset = (int)_configuration.hairstyleSetting;
+        var glassesOffset = (int)_configuration.glassesSetting;
+
+        Log.Debug($"Current hair offset: {hairOffset}");
+        Log.Debug($"Current glasses offset: {glassesOffset}");
 
         var normalHair = (int)Hair.Standard;
         var seesHair = (int)Hair.SEES_Uniform;
@@ -151,6 +144,15 @@ public class Mod : ModBase // <= Do not Remove.
         var H000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, normalHair);
         var H052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, seesHair);
         var Title = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, normalHair);
+
+        var newH000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newNormalHair);
+        var newH052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newSEESHair);
+        var newTitle = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, newNormalHair);
+
+        Log.Debug($"Current hair path: {H000}");
+        Log.Debug($"Current combat hair path: {glassesOffset}L");
+
+
         // LOAD HAIRSTYLE
 
         if (_configuration.DEBUG_MODE)
@@ -169,26 +171,17 @@ public class Mod : ModBase // <= Do not Remove.
                 var newC106 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 906);
                 Redirect(C106, newC106);
             }
-            if (hairOffset != 0 || glassesOffset != 0)
+            if (newNormalHair != normalHair)
             {
-                var newH000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newNormalHair);
                 Redirect(H000, newH000);
-                var newH052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newSEESHair);
                 Redirect(H052, newH052);
-                var newTitle = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, newNormalHair);
                 Redirect(Title, newTitle);
+                // BUSTUPS
+                BustupRedirect(newNormalHair, Character.Fuuka);
             }
         }
-
-        if (haveCostumeApi)
-        {
-
-            var C104 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 104);
-            var newC104 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 904);
-            Redirect(C104, newC104);
-            var thisModule = getModule(modDir,Module.Costumes);
-            CostumeModule.LoadCostumes(costumeApi, unrealEssentials, thisModule);
-        }
+        LoadModule(unrealEssentials, modDir, Module.Costumes);
+        InitOverrides(modDir, costumeApi, _configuration);
     }
     private void LoadModule(IUnrealEssentials unreal, string modDir, Module module, string patch = "null")
     {
@@ -243,7 +236,7 @@ public class Mod : ModBase // <= Do not Remove.
         Core = 0,
         Hair = 1,
         Costumes = 2,
-        CharCreator = 3,
+        Bustups = 3,
         Debug = 4,
     }
 
@@ -263,6 +256,70 @@ public class Mod : ModBase // <= Do not Remove.
             throw new ArgumentNullException("Mod directory not found",e);
         }
     }
+
+    public void BustupRedirect(int hairAssetID, Character chr)
+    {
+        if (hairAssetID%10 == 1)
+        {
+            foreach(string emote in bustupsGlasses) { 
+                var original = Assets.Bustup(emote, chr);
+                var replacer = Assets.NewBustup(emote, chr, BustupComponent.Emote);
+                Redirect(original,replacer);
+                Log.Verbose($"{emote} redirected to /Glasses/{emote}");
+            }
+        }
+        if (hairAssetID > 0)
+        {
+            foreach (string bustup in bustupsBase)
+            {
+                var original = Assets.Bustup(bustup, chr);
+                var replacer = Assets.NewBustup(bustup, chr, BustupComponent.Base, hairAssetID);
+                Redirect(original, replacer);
+                Log.Verbose($"{bustup} redirected to /H{hairAssetID:000}/{bustup}");
+            }
+            Log.Debug("Bustups redirected.");
+        }
+    }
+
+    public static void LoadOverride(ICostumeApi costumeApi, string moduleDir, string overrideFile = "CostumeOverride.yaml")
+    {
+
+        var _override = Path.Join(moduleDir, overrideFile);
+
+        costumeApi.AddOverridesFile(_override);
+    }
+
+    public void InitOverrides(string folder, ICostumeApi costumeApi, Config config)
+    {
+        var thisFolder = folder;
+
+        var overrideFolder = Path.Join(thisFolder, "Overrides");
+
+        var overrideFiles = Directory.GetFiles(overrideFolder, "*.yaml");
+
+        foreach (var overrideFile in overrideFiles)
+        {
+            var file = Path.GetFileName(overrideFile);
+            var option = Path.GetFileNameWithoutExtension(overrideFile);
+
+            if (Enum.IsDefined(typeof(NewOutfits), option))
+            {
+                var enumOption = (NewOutfits)Enum.Parse(typeof(NewOutfits), option);
+                if (optionBool(enumOption, config))
+                {
+                    LoadOverride(costumeApi, overrideFolder, file);
+                }
+            }
+        }
+    }
+
+
+    public bool optionBool(NewOutfits outfit, Config config)
+    => outfit switch
+    {
+        NewOutfits.UNSC_Parka => config.UNSC_Parka,
+        _ => throw new NotImplementedException(),
+    };
 
     private record class AssetIDFuuka (AssetType Type, int AssetID)
     {

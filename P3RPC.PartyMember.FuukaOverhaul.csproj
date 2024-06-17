@@ -20,6 +20,7 @@
     <Compile Remove="Modules\02_Patches\**" />
     <Compile Remove="Modules\Textures\**" />
     <Compile Remove="Modules\Vanilla\**" />
+    <Compile Remove="RAWASSETS\02_Costumes\**" />
     <Compile Remove="Redirector\ModAssets\**" />
     <Compile Remove="Redirector\Modules\**" />
     <Compile Remove="Redirector\TypesReplaced\**" />
@@ -28,6 +29,7 @@
     <EmbeddedResource Remove="Modules\02_Patches\**" />
     <EmbeddedResource Remove="Modules\Textures\**" />
     <EmbeddedResource Remove="Modules\Vanilla\**" />
+    <EmbeddedResource Remove="RAWASSETS\02_Costumes\**" />
     <EmbeddedResource Remove="Redirector\ModAssets\**" />
     <EmbeddedResource Remove="Redirector\Modules\**" />
     <EmbeddedResource Remove="Redirector\TypesReplaced\**" />
@@ -36,6 +38,7 @@
     <None Remove="Modules\02_Patches\**" />
     <None Remove="Modules\Textures\**" />
     <None Remove="Modules\Vanilla\**" />
+    <None Remove="RAWASSETS\02_Costumes\**" />
     <None Remove="Redirector\ModAssets\**" />
     <None Remove="Redirector\Modules\**" />
     <None Remove="Redirector\TypesReplaced\**" />
@@ -44,11 +47,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Remove="RAWASSETS\02_Costumes\Costumes\CostumeFactory.cs" />
-    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\Costume.cs" />
-    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\CostumeConfig.cs" />
-    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\CostumeModule.cs" />
-    <Compile Remove="RAWASSETS\02_Costumes\Costumes\Models\GameCostumes.cs" />
     <Compile Remove="Redirector\AssetDictionary.cs" />
     <Compile Remove="Redirector\Redirector.cs" />
     <Compile Remove="Utils\CompareAssets.cs" />
@@ -68,12 +66,26 @@
     <None Remove="ModConfig.json" />
     <None Remove="BuildLinked.ps1" />
     <None Remove="Modules\02_Costumes\CostumeOverride.yaml" />
-    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\config.yaml" />
-    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\description.msg" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuBaMk.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuMeMk.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuSkMk.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C904.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_Col.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_Col.ubulk" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkA.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkA.ubulk" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkB.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkB.ubulk" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_ShC.uasset" />
+    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_ShC.ubulk" />
+    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\config.yaml" />
+    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\costume-mesh.uasset" />
+    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\description.msg" />
     <None Remove="Modules\Resources\costumes.json" />
     <None Remove="Modules\Resources\descriptions.msg" />
     <None Remove="Reloaded.Trimming.targets" />
     <None Remove="Reloaded.Checks.targets" />
+    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\hair-mesh.uasset" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,10 +95,52 @@
     <Content Include="Modules\02_Costumes\CostumeOverride.yaml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\config.yaml">
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuBaMk.uasset">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\Halo_Outfit\description.msg">
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuMeMk.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuSkMk.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C904.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_Col.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_Col.ubulk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkA.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkA.ubulk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkB.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkB.ubulk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_ShC.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_ShC.ubulk">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\config.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\costume-mesh.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\description.msg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\hair-mesh.uasset">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <EmbeddedResource Include="Modules\Resources\costumes.json" />
@@ -229,15 +283,6 @@
     <None Update="Modules\01_Hair\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuBaMk.uasset">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuMeMk.uasset">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuSkMk.uasset">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -358,11 +403,539 @@
     <None Update="Modules\00_Core\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_H002_00_ShC.ubulk">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Overrides\UNSC_Parka.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="Preview.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
-    <None Update="RAWASSETS\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C904.uasset">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F00_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F00_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F00_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F00_C901_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F00_C901_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F00_C901_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F01_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F01_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F01_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F02_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F02_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F02_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F03_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F03_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F03_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F04_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F05_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F06_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F06_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F06_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F08_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F10_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F10_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F10_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F11_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\Glasses\T_BU_PC0006_F30_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseA_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H001\T_BU_PC0006_PoseB_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C154.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseA_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C154.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H010\T_BU_PC0006_PoseB_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C154.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseA_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C154.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\H011\T_BU_PC0006_PoseB_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F00_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F00_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F00_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F00_C901_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F00_C901_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F00_C901_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F01_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F01_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F01_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F02_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F02_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F02_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F03_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F03_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F03_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F04_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F05_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F06_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F06_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F06_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F08_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F10_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F10_C900_E2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F10_C900_E3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F11_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C052_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C052_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C052_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C900_E1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C900_M1.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C900_M2.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_F30_C900_M3.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseA_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C001.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C002.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C005.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C006.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C052.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C102.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C155.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="UnrealEssentials\P3R\Content\Xrd777\UI\Bustup\Textures\PC0006\T_BU_PC0006_PoseB_C156.uasset">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
@@ -375,22 +948,13 @@
 
   <ItemGroup>
     <Folder Include="Assets\Hair\Ponytail\" />
-    <Folder Include="RAWASSETS\02_Costumes\Data\Hooks\" />
+    <Folder Include="Modules\03_Bustups\01_GlassesOnly\" />
     <Folder Include="Modules\04_Debug\" />
-    <Folder Include="Native\" />
-    <Folder Include="Costumes\" />
-    <Folder Include="RAWASSETS\02_Costumes\Utils\Services\" />
+    <Folder Include="Publish\Native\" />
+    <Folder Include="Modules\Costumes\" />
     <Folder Include="RAWASSETS\P3R\Content\Xrd777\" />
     <Folder Include="RAWASSETS\P3R\Content\Xrd777\Characters\Player\PC0006\Models\" />
     <Folder Include="Redirector\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="RAWASSETS\02_Costumes\Costumes\CostumeFactory.cs" />
-    <None Include="RAWASSETS\02_Costumes\Data\Models\Costume.cs" />
-    <None Include="RAWASSETS\02_Costumes\Costumes\Models\CostumeConfig.cs" />
-    <None Include="RAWASSETS\02_Costumes\Costumes\Models\CostumeModule.cs" />
-    <None Include="RAWASSETS\02_Costumes\Data\Models\GameCostumes.cs" />
   </ItemGroup>
 
   <ItemGroup>
@@ -398,12 +962,6 @@
     <ProjectReference Include="Submodules\Project.Utils\Project.Utils.csproj" />
     <ProjectReference Include="Submodules\Unreal.AtlusScript\Unreal.AtlusScript.Interfaces\Unreal.AtlusScript.Interfaces.csproj" />
     <ProjectReference Include="Submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Project.Utils">
-      <HintPath>Project.Utils</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

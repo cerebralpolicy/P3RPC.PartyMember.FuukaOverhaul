@@ -1,0 +1,1 @@
+﻿[uf 0 5 65278][uf 2 1]A snug outfit for Fuuka that resembles the attire her favorite video game character wore as a young woman.[n][e]

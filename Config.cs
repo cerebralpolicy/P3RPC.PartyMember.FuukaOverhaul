@@ -25,11 +25,16 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
 
             The `DefaultValue` attribute is used as part of the `Reset` button in Reloaded-Launcher.
         */
+        [DisplayName("Log Level")]
+        [DefaultValue(LogLevel.Information)]
+        public LogLevel LogLevel { get; set; } = LogLevel.Information;
+
         [DisplayName("Debug Mode")]
         [Description("This is a bool.")]
         [DefaultValue(false)]
         public bool DEBUG_MODE { get; set; } = false;
 
+        [Category("Core")]
         [DisplayName("Glasses Setting")]
         [Description("This is an enumerable.")]
         [DefaultValue(GlassesSetting.Modern)]
@@ -40,6 +45,8 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
             NONE = 0,
             Modern = 1,
         }
+
+        [Category("Core")]
         [DisplayName("Hairstyle")]
         [Description("This is an enumerable.")]
         [DefaultValue(HairstyleSetting.Ponytail)]
@@ -47,10 +54,17 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
 
         public enum HairstyleSetting
         {
-            Vanilla,
+            Vanilla = 0,
             Ponytail = 10,
            // Bangs_Ponytail = 20,
         }
+
+        [Category("Costumes")]
+        [DisplayName("Battle Panties => Prodigal Scientist Parka")]
+        [Description("Fuuk you, I'm unsexualizing your Fuuka.")]
+        [DefaultValue(true)]
+        public bool UNSC_Parka { get; set; } = true;
+
     }
 
     /// <summary>
