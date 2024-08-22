@@ -57,21 +57,21 @@ internal static class Assets
         }
         return adjustedPath;
     }
-    public static string Bustup(string bustUpName, Character chr)
+    public static string GetBustupPath(string bustUpName, Character chr)
     {
         var chrIndex = (int)chr;
         string? path;
         if (chrIndex < 100)
         {
-            path = FormatAssetPath($"/Game/Content/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{bustUpName}", chr);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{bustUpName}", chr);
         }
         else
         {
-            path = FormatAssetPath($"/Game/Content/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{bustUpName}", chr);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{bustUpName}", chr);
         }
         return path;
     }
-    public static string NewBustup(string bustUpName, Character chr, BustupComponent type, int hairAssetID = 0)
+    public static string GetAltBustupPath(string bustUpName, Character chr, BustupComponent type, int hairAssetID)
     {
         var chrIndex = (int)chr;
         string? path;
@@ -87,11 +87,11 @@ internal static class Assets
 
         if (chrIndex < 100)
         {
-            path = FormatAssetPath($"/Game/Content/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{subfolder}/{bustUpName}", chr);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{subfolder}/{bustUpName}", chr);
         }
         else
         {
-            path = FormatAssetPath($"/Game/Content/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{subfolder}/{bustUpName}", chr);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{subfolder}/{bustUpName}", chr);
         }
         return path;
     }
@@ -101,7 +101,7 @@ internal static class Assets
         List<string> paths = [];
         foreach (var bustup in bustupCollection)
         {
-            string pathTo = Bustup(bustup, chr);
+            string pathTo = GetBustupPath(bustup, chr);
             paths.Add(pathTo);
         }
         return [.. paths];

@@ -64,7 +64,7 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Utils.Lists
             "T_BU_PC0006_F30_C900_M2",
             "T_BU_PC0006_F30_C900_M3",
         ];
-        public static string[] bustupsBase = [
+        public static string[] bustupsBases = [
             "T_BU_PC0006_PoseA_C001",
             "T_BU_PC0006_PoseA_C002",
             "T_BU_PC0006_PoseA_C005",

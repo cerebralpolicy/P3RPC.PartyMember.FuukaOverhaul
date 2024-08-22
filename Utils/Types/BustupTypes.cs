@@ -2,6 +2,6 @@
 
 public enum BustupComponent
 {
-    Base,
+    BaseLayer,
     Emote,
 }

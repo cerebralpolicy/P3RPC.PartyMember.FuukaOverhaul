@@ -135,31 +135,24 @@ public class Mod : ModBase // <= Do not Remove.
         Log.Debug($"Current hair offset: {hairOffset}");
         Log.Debug($"Current glasses offset: {glassesOffset}");
 
-        var normalHair = (int)Hair.Standard;
-        var seesHair = (int)Hair.SEES_Uniform;
+        var normalHair = 0;
+        var seesHair = 52;
 
-        var newNormalHair = normalHair + hairOffset + glassesOffset;
-        var newSEESHair = seesHair + hairOffset + glassesOffset;
+        var newNormalHair = hairOffset + glassesOffset;
+        Log.Debug($"Current hair index: {newNormalHair:000}");
+        var newSEESHair = 52 + newNormalHair;
 
         var H000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, normalHair);
         var H052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, seesHair);
         var Title = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, normalHair);
 
-        var newH000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newNormalHair);
-        var newH052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newSEESHair);
-        var newTitle = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, newNormalHair);
-
-        Log.Debug($"Current hair path: {H000}");
-        Log.Debug($"Current combat hair path: {glassesOffset}L");
+        /// Possible hair redirects
+        /// H001 - Ponytail no glasses  [Headset: H053]
+        /// H010 - Glasses no ponytail  [Headset: H062]
+        /// H011 - Glasses & ponytail   [Headset: H063]
 
 
         // LOAD HAIRSTYLE
-
-        if (_configuration.DEBUG_MODE)
-        {
-            // MANUAL OVERRIDES
-            LoadModule(unrealEssentials, modDir, Module.Debug);
-        }
 
         if (hairStyle != null)
         {
@@ -171,17 +164,45 @@ public class Mod : ModBase // <= Do not Remove.
                 var newC106 = Assets.GetAssetPath(Character.Fuuka, AssetType.CostumeMesh, 906);
                 Redirect(C106, newC106);
             }
-            if (newNormalHair != normalHair)
+            if (newNormalHair > 0)
             {
+                var newH000 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newNormalHair);
+                var newH052 = Assets.GetAssetPath(Character.Fuuka, AssetType.HairMesh, newSEESHair);
+                var newTitle = Assets.GetAssetPath(Character.Fuuka, AssetType.TitleMesh, newNormalHair);
+                Log.Debug($"Current hair path: {newH000}");
+                Log.Debug($"Current combat hair path: {newH052}");
                 Redirect(H000, newH000);
                 Redirect(H052, newH052);
                 Redirect(Title, newTitle);
                 // BUSTUPS
-                BustupRedirect(newNormalHair, Character.Fuuka);
+                LoadBustupModule(unrealEssentials, modDir, newNormalHair);
             }
         }
         LoadModule(unrealEssentials, modDir, Module.Costumes);
         InitOverrides(modDir, costumeApi, _configuration);
+    }
+    private void LoadBustupModule(IUnrealEssentials unreal, string modDir, int hairIndex, Module module = Module.Bustups)
+    {
+        var submodule = hairIndex.ToString("00");
+        try
+        {
+            var modulePath = getModule(modDir, module);
+            var submodulePath = Path.Combine(modulePath, submodule);
+            if (Directory.Exists(submodulePath))
+            {
+                if (Directory.Exists(Path.Combine(submodulePath, "P3R")))
+                {
+                    unreal.AddFromFolder(submodulePath);
+                }
+            }
+        }
+        catch (Exception ex)
+        {
+            if (getModule(modDir, module) == null)
+            {
+                throw new ArgumentNullException($"No {module} module found", ex);
+            }
+        }
     }
     private void LoadModule(IUnrealEssentials unreal, string modDir, Module module, string patch = "null")
     {
@@ -215,7 +236,6 @@ public class Mod : ModBase // <= Do not Remove.
         {
             return;
         }
-
         var vanFNames = new AssetFNames(van);
         var modFNames = new AssetFNames(mod);
         if (unrealEmitter != null)
@@ -257,29 +277,6 @@ public class Mod : ModBase // <= Do not Remove.
         }
     }
 
-    public void BustupRedirect(int hairAssetID, Character chr)
-    {
-        if (hairAssetID%10 == 1)
-        {
-            foreach(string emote in bustupsGlasses) { 
-                var original = Assets.Bustup(emote, chr);
-                var replacer = Assets.NewBustup(emote, chr, BustupComponent.Emote);
-                Redirect(original,replacer);
-                Log.Verbose($"{emote} redirected to /Glasses/{emote}");
-            }
-        }
-        if (hairAssetID > 0)
-        {
-            foreach (string bustup in bustupsBase)
-            {
-                var original = Assets.Bustup(bustup, chr);
-                var replacer = Assets.NewBustup(bustup, chr, BustupComponent.Base, hairAssetID);
-                Redirect(original, replacer);
-                Log.Verbose($"{bustup} redirected to /H{hairAssetID:000}/{bustup}");
-            }
-            Log.Debug("Bustups redirected.");
-        }
-    }
 
     public static void LoadOverride(ICostumeApi costumeApi, string moduleDir, string overrideFile = "CostumeOverride.yaml")
     {

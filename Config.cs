@@ -43,7 +43,7 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
         public enum GlassesSetting
         {
             NONE = 0,
-            Modern = 1,
+            Modern = 10,
         }
 
         [Category("Core")]
@@ -55,7 +55,7 @@ namespace P3RPC.PartyMember.FuukaOverhaul.Configuration
         public enum HairstyleSetting
         {
             Vanilla = 0,
-            Ponytail = 10,
+            Ponytail = 1,
            // Bangs_Ponytail = 20,
         }
 
