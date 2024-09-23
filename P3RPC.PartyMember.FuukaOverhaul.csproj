@@ -92,6 +92,8 @@
     <Content Include="ModConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <Content Include="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset" />
+    <Content Include="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052.uasset" />
     <Content Include="Preview.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>      
     </Content>

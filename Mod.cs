@@ -175,23 +175,26 @@ public class Mod : ModBase // <= Do not Remove.
     private void BustupRedirects(int hairIndex)
     {
         var glassesEnabled = hairIndex > 9;
-        var hairChanged = hairIndex > 0;
-
+        var hairChanged = hairIndex % 10 == 1;
+        HairFlag hairFlag = new();
+        
         if (glassesEnabled)
         {
+            hairFlag |= HairFlag.Glasses;
             foreach (var texture in EyeTextures)
             {
                 var oldAsset = Assets.GetBustupPath(texture, Character.Fuuka);
-                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.Emote);
+                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.Emote, hairFlag);
                 Redirect(oldAsset, newAsset);
             }
         }
         if (hairChanged)
         {
+            hairFlag |= HairFlag.Glasses;
             foreach (var texture in BaseTextures)
             {
                 var oldAsset = Assets.GetBustupPath(texture, Character.Fuuka);
-                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.BaseLayer, hairIndex);
+                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.BaseLayer, hairFlag);
                 Redirect(oldAsset, newAsset);
             }
         }

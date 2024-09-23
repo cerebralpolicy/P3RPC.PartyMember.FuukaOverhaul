@@ -57,27 +57,31 @@ internal static class Assets
         }
         return adjustedPath;
     }
-    public static string GetAltBustupPath(string bustUpName, Character chr, BustupComponent type, int hairAssetID = 0)
+    public static string GetAltBustupPath(string bustUpName, Character chr, BustupComponent type, HairFlag flags)
     {
         var chrIndex = (int)chr;
         string? path;
         string? subfolder;
+        string? suffix;
+        int hairAssetId = flags.ToId();
         if (type == BustupComponent.Emote)
         {
             subfolder = "Glasses";
+            suffix = subfolder;
         }
         else
         {
-            subfolder = $"H{hairAssetID:000}";
+            subfolder = $"H{hairAssetId:000}";
+            suffix = flags.ToSuffix();
         }
 
         if (chrIndex < 100)
         {
-            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{subfolder}/{bustUpName}", chr);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{subfolder}/{bustUpName}_{suffix}", chr);
         }
         else
         {
-            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{subfolder}/{bustUpName}", chr);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{subfolder}/{bustUpName}_{suffix}", chr);
         }
         return path;
     }
