@@ -20,6 +20,7 @@
     <Compile Remove="Modules\02_Patches\**" />
     <Compile Remove="Modules\Textures\**" />
     <Compile Remove="Modules\Vanilla\**" />
+    <Compile Remove="Publish\**" />
     <Compile Remove="RAWASSETS\02_Costumes\**" />
     <Compile Remove="Redirector\ModAssets\**" />
     <Compile Remove="Redirector\Modules\**" />
@@ -29,6 +30,7 @@
     <EmbeddedResource Remove="Modules\02_Patches\**" />
     <EmbeddedResource Remove="Modules\Textures\**" />
     <EmbeddedResource Remove="Modules\Vanilla\**" />
+    <EmbeddedResource Remove="Publish\**" />
     <EmbeddedResource Remove="RAWASSETS\02_Costumes\**" />
     <EmbeddedResource Remove="Redirector\ModAssets\**" />
     <EmbeddedResource Remove="Redirector\Modules\**" />
@@ -38,6 +40,7 @@
     <None Remove="Modules\02_Patches\**" />
     <None Remove="Modules\Textures\**" />
     <None Remove="Modules\Vanilla\**" />
+    <None Remove="Publish\**" />
     <None Remove="RAWASSETS\02_Costumes\**" />
     <None Remove="Redirector\ModAssets\**" />
     <None Remove="Redirector\Modules\**" />
@@ -66,36 +69,21 @@
     <None Remove="ModConfig.json" />
     <None Remove="BuildLinked.ps1" />
     <None Remove="Modules\02_Costumes\CostumeOverride.yaml" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuBaMk.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuMeMk.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\MI_PC0006_C904_00_FuSkMk.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_C904.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_Col.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_Col.ubulk" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkA.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkA.ubulk" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkB.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_MkB.ubulk" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_ShC.uasset" />
-    <None Remove="Modules\02_Costumes\P3R\Content\Xrd777\Characters\Player\PC0006\Models\T_PC0006_C904_00_ShC.ubulk" />
-    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\config.yaml" />
-    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\costume-mesh.uasset" />
-    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\description.msg" />
     <None Remove="Modules\Resources\costumes.json" />
     <None Remove="Modules\Resources\descriptions.msg" />
     <None Remove="Reloaded.Trimming.targets" />
     <None Remove="Reloaded.Checks.targets" />
-    <None Remove="UnrealEssentials\P3R\Content\Costumes\Fuuka\UNSC_Parka\hair-mesh.uasset" />
   </ItemGroup>
 
   <ItemGroup Label="Core">
     <Content Include="ModConfig.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H000.uasset" />
-    <Content Include="Modules\04_Debug\P3R\Content\Xrd777\Characters\Player\PC0006\Models\SK_PC0006_H052.uasset" />
     <Content Include="Preview.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>      
+    </Content>
+    <Content Include="Bustups\**">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
     <Content Include="UnrealEssentials\**">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -103,33 +91,32 @@
   </ItemGroup>
 
   <ItemGroup Label="Modules">
-    <Content Include="Modules\00_Core\**" Label="Core">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Modules\01_Hair\**" Label="Hair">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Modules\02_Costumes\**" Label="Costumes">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="Modules\03_Bustups\**" Label="Bustups">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+
     <EmbeddedResource Include="Modules\Resources\costumes.json" />
     <EmbeddedResource Include="Modules\Resources\descriptions.msg" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="p3rpc.nativetypes.Interfaces" Version="1.6.1" />
+    <PackageReference Include="Reloaded.Memory.SigScan.ReloadedII.Interfaces" Version="1.2.0" />
     <PackageReference Include="Reloaded.Mod.Interfaces" Version="2.4.0" ExcludeAssets="runtime" />
     <PackageReference Include="Reloaded.SharedLib.Hooks" Version="1.9.0" />
     <PackageReference Include="RyoTune.Reloaded" Version="1.0.1" />
-    <PackageReference Include="Unreal.ObjectsEmitter.Interfaces" Version="1.2.3" />
     <PackageReference Include="UnrealEssentials.Interfaces" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="RAWASSETS\P3R\Content\Xrd777\Characters\Player\PC0006\Models\" />
+    <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\config.yaml" />
+    <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\costume-mesh.uasset" />
+    <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\description.msg" />
+    <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\hair-mesh.uasset" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="Submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Modules\02_Costumes\" />
   </ItemGroup>
 
 </Project>

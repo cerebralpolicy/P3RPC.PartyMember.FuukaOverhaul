@@ -9,6 +9,7 @@ using Unreal.ObjectsEmitter.Interfaces;
 using UnrealEssentials.Interfaces;
 //using P3R.CostumeFramework.Interfaces;
 using System.Drawing;
+using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
 
 namespace P3RPC.PartyMember.FuukaOverhaul;
 
@@ -77,6 +78,7 @@ public class Mod : ModBase // <= Do not Remove.
 
         // INIT PROJECT.UTILS LOGGER
 
+
         Project.Init(_modConfig, _modLoader, _logger);
         Log.LogLevel = _configuration.LogLevel;
 
@@ -89,7 +91,6 @@ public class Mod : ModBase // <= Do not Remove.
         if (unrealEssentialsController == null || !unrealEssentialsController.TryGetTarget(out var unrealEssentials))
         {
             Log.Error("Unable to get controller for Unreal Essentials.");
-//            _logger.WriteLine($"[{modName}] | [My Mod] Unable to get controller for Unreal Essentials.", System.Drawing.Color.Red);
             return;
         }
         else
@@ -103,7 +104,6 @@ public class Mod : ModBase // <= Do not Remove.
         if (unrealEmitterController == null || !unrealEmitterController.TryGetTarget(out var unrealEmitter))
         {
             Log.Error("Unable to get controller for Unreal Object Emitters.");
-            //            _logger.WriteLine($"[{modName}] | [My Mod] unable to get controller for Unreal Object Emitters.", System.Drawing.Color.Red);
             return;
         }
         else
@@ -113,12 +113,10 @@ public class Mod : ModBase // <= Do not Remove.
         }
         this.unrealEmitter = unrealEmitter;
 
+
         // END INIT DEPENDENCIES
 
         // LOAD TEXTURES
-
-        LoadModule(this.unrealEssentials, modDir, Module.Core);
-
         var hairStyle = Enum.GetName(_configuration.hairstyleSetting);
         var hairOffset = (int)_configuration.hairstyleSetting;
         var glassesOffset = (int)_configuration.glassesSetting;
@@ -147,7 +145,6 @@ public class Mod : ModBase // <= Do not Remove.
 
         if (hairStyle != null)
         {
-            LoadModule(this.unrealEssentials, modDir, Module.Hair);
             if (hairOffset != 0)
             {
                 // PONYTAILS HATE BONNETS, REDIRECT TO ALT MAID OUTFIT
@@ -166,13 +163,12 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(H052, newH052);
                 Redirect(Title, newTitle);
                 // BUSTUPS
-                LoadModule(unrealEssentials, modDir, Module.Bustups);
-                BustupRedirects(newNormalHair);
+                LoadBustups(newNormalHair, unrealEssentials, modDir);
             }
         }
         Project.Start();
     }
-    private void BustupRedirects(int hairIndex)
+    private void LoadBustups(int hairIndex, IUnrealEssentials unreal, string modDir)
     {
         var glassesEnabled = hairIndex > 9;
         var hairChanged = hairIndex % 10 == 1;
@@ -181,45 +177,28 @@ public class Mod : ModBase // <= Do not Remove.
         if (glassesEnabled)
         {
             hairFlag |= HairFlag.Glasses;
-            foreach (var texture in EyeTextures)
-            {
-                var oldAsset = Assets.GetBustupPath(texture, Character.Fuuka);
-                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.Emote, hairFlag);
-                Redirect(oldAsset, newAsset);
-            }
+            GetBustupPack(unreal, modDir, HairFlag.Glasses);
         }
         if (hairChanged)
         {
-            hairFlag |= HairFlag.Glasses;
-            foreach (var texture in BaseTextures)
-            {
-                var oldAsset = Assets.GetBustupPath(texture, Character.Fuuka);
-                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.BaseLayer, hairFlag);
-                Redirect(oldAsset, newAsset);
-            }
+            hairFlag |= HairFlag.Ponytail;
+            GetBustupPack(unreal, modDir, hairFlag);
         }
-    }
-    private void LoadModule(IUnrealEssentials unreal, string modDir, Module module, string patch = "null")
-    {
-        if (patch == "null")
+        else if (!hairChanged)
         {
-            try
+            hairFlag |= HairFlag.Vanilla;
+        }
+
+    }
+    private void GetBustupPack(IUnrealEssentials unreal, string modDir, HairFlag flag)
+    {        
+        var pack = flag.ToSuffix();
+        var modulePath = Path.Join(modDir,"Bustups",pack);
+        if (Directory.Exists(modulePath))
+        {
+            if (Directory.Exists(Path.Combine(modulePath, "P3R")))
             {
-                var modulePath = getModule(modDir, module);
-                if (Directory.Exists(modulePath))
-                {
-                    if (Directory.Exists(Path.Combine(modulePath, "P3R")))
-                    {
-                        unreal.AddFromFolder(modulePath);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                if (getModule(modDir, module) == null)
-                {
-                    throw new ArgumentNullException($"No {module} module found", ex);
-                }
+                unreal.AddFromFolder(modulePath);
             }
         }
     }

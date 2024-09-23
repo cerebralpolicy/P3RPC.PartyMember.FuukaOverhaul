@@ -1,0 +1,18 @@
+﻿# Override the outfit name (folder name for new outfits, in-game name for game outfits)
+name: "Prodigal Scientist Parka"
+
+base:
+  mesh_path: 
+  anim_path: 
+
+costume:
+  mesh_path: 
+  anim_path: #NOT IMPLEMENTED
+
+hair:
+  mesh_path: /Game/Xrd777/Characters/Player/PC0006/Models/SK_PC0006_H063.uasset
+  anim_path: #NOT IMPLEMENTED
+
+face:
+  mesh_path: 
+  anim_path: #NOT IMPLEMENTED

@@ -14,7 +14,7 @@
   "ReleaseMetadataFileName": "P3RPC.PartyMember.FuukaOverhaul.ReleaseMetadata.json",
   "PluginData": {},
   "IsUniversalMod": false,
-  "ModDependencies": [ "reloaded.sharedlib.hooks", "UnrealEssentials", "Unreal.ObjectsEmitter.Reloaded" ],
+  "ModDependencies": [ "Reloaded.Memory.SigScan.ReloadedII", "reloaded.sharedlib.hooks", "UnrealEssentials", "Unreal.ObjectsEmitter.Reloaded" ],
   "OptionalDependencies": [  ],
   "SupportedAppId": ["p3r.exe"],
   "ProjectUrl": ""

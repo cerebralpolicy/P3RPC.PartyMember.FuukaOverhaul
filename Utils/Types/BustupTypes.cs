@@ -25,6 +25,10 @@ public static class HairFlags
         {
             list.Add("Pony");
         }
+        if (flag.HasFlag(HairFlag.Vanilla))
+        {
+            list.Add("Vanilla");
+        }
         if (flag.HasFlag(HairFlag.Glasses))
         {
             list.Add("Glasses");
