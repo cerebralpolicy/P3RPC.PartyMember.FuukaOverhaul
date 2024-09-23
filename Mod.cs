@@ -167,7 +167,6 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(H052, newH052);
                 Redirect(Title, newTitle);
                 // BUSTUPS
-                LoadModule(this.unrealEssentials, modDir, Module.Bustups);
                 BustupRedirects(newNormalHair);
             }
         }
@@ -177,7 +176,7 @@ public class Mod : ModBase // <= Do not Remove.
     {
         var glassesEnabled = hairIndex > 9;
         var hairChanged = hairIndex > 0;
-        
+
         if (glassesEnabled)
         {
             foreach (var texture in EyeTextures)
