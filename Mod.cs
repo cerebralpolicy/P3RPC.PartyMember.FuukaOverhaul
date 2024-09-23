@@ -2,7 +2,6 @@
 using P3RPC.PartyMember.FuukaOverhaul.Modules;
 using P3RPC.PartyMember.FuukaOverhaul.Template;
 using P3RPC.PartyMember.FuukaOverhaul.Utils;
-using static P3RPC.PartyMember.FuukaOverhaul.Utils.Lists.BustupsReplaced;
 using P3RPC.PartyMember.FuukaOverhaul.Utils.Types;
 using Reloaded.Hooks.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
@@ -167,6 +166,7 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(H052, newH052);
                 Redirect(Title, newTitle);
                 // BUSTUPS
+                LoadModule(unrealEssentials, modDir, Module.Bustups);
                 BustupRedirects(newNormalHair);
             }
         }
