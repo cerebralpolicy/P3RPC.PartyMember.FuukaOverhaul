@@ -57,21 +57,7 @@ internal static class Assets
         }
         return adjustedPath;
     }
-    public static string GetBustupPath(string bustUpName, Character chr)
-    {
-        var chrIndex = (int)chr;
-        string? path;
-        if (chrIndex < 100)
-        {
-            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{bustUpName}", chr);
-        }
-        else
-        {
-            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{bustUpName}", chr);
-        }
-        return path;
-    }
-    public static string GetAltBustupPath(string bustUpName, Character chr, BustupComponent type, int hairAssetID)
+    public static string GetAltBustupPath(string bustUpName, Character chr, BustupComponent type, int hairAssetID = 0)
     {
         var chrIndex = (int)chr;
         string? path;
@@ -95,15 +81,18 @@ internal static class Assets
         }
         return path;
     }
-    public static string[] GetBustUpPaths(string[] bustupCollection, Character chr)
+    public static string GetBustupPath(string bustUpName, Character chr, string? subfolder = null)
     {
-
-        List<string> paths = [];
-        foreach (var bustup in bustupCollection)
+        var chrIndex = (int)chr;
+        string? path;
+        if (chrIndex < 100)
         {
-            string pathTo = GetBustupPath(bustup, chr);
-            paths.Add(pathTo);
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/PC{FormatCharID(chr)}/{bustUpName}", chr);
         }
-        return [.. paths];
+        else
+        {
+            path = FormatAssetPath($"/Game/Xrd777/UI/Bustup/Textures/SC{FormatCharID(chr)}/{bustUpName}", chr);
+        }
+        return path;
     }
 }

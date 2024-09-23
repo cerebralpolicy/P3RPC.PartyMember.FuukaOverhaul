@@ -8,8 +8,7 @@ using Reloaded.Hooks.ReloadedII.Interfaces;
 using Reloaded.Mod.Interfaces;
 using Unreal.ObjectsEmitter.Interfaces;
 using UnrealEssentials.Interfaces;
-using P3R.CostumeFramework.Interfaces;
-using P3RPC.PartyMember.FuukaOverhaul.Overrides.Types;
+//using P3R.CostumeFramework.Interfaces;
 using System.Drawing;
 
 namespace P3RPC.PartyMember.FuukaOverhaul;
@@ -56,7 +55,7 @@ public class Mod : ModBase // <= Do not Remove.
     /// </summary>
     private readonly IUnrealEssentials? unrealEssentials;
     private readonly IUnreal? unrealEmitter;
-    private readonly ICostumeApi? _costumeApi;
+    //private readonly ICostumeApi? costumeApi;
 
     /// <summary>
     /// Optional Dependencies
@@ -78,7 +77,8 @@ public class Mod : ModBase // <= Do not Remove.
         // INIT DEPENDENCIES
 
         // INIT PROJECT.UTILS LOGGER
-        Log.Initialize(modName, _logger, Color.White);
+
+        Project.Init(_modConfig, _modLoader, _logger);
         Log.LogLevel = _configuration.LogLevel;
 
         bool haveUnrealEssentials;
@@ -114,19 +114,11 @@ public class Mod : ModBase // <= Do not Remove.
         }
         this.unrealEmitter = unrealEmitter;
 
-        var costumeApiController = _modLoader.GetController<ICostumeApi>();
-        if (costumeApiController == null || !costumeApiController.TryGetTarget(out var costumeApi))
-        {
-            Log.Error("Unable to get controller for Costume Framework.");
-            return;
-        }
-        _costumeApi = costumeApi;
-
         // END INIT DEPENDENCIES
 
         // LOAD TEXTURES
 
-        LoadModule(unrealEssentials, modDir, Module.Core);
+        LoadModule(this.unrealEssentials, modDir, Module.Core);
 
         var hairStyle = Enum.GetName(_configuration.hairstyleSetting);
         var hairOffset = (int)_configuration.hairstyleSetting;
@@ -156,7 +148,7 @@ public class Mod : ModBase // <= Do not Remove.
 
         if (hairStyle != null)
         {
-            LoadModule(unrealEssentials, modDir, Module.Hair);
+            LoadModule(this.unrealEssentials, modDir, Module.Hair);
             if (hairOffset != 0)
             {
                 // PONYTAILS HATE BONNETS, REDIRECT TO ALT MAID OUTFIT
@@ -175,32 +167,32 @@ public class Mod : ModBase // <= Do not Remove.
                 Redirect(H052, newH052);
                 Redirect(Title, newTitle);
                 // BUSTUPS
-                LoadBustupModule(unrealEssentials, modDir, newNormalHair);
+                BustupRedirects(newNormalHair);
             }
         }
-        LoadModule(unrealEssentials, modDir, Module.Costumes);
-        InitOverrides(modDir, costumeApi, _configuration);
+        Project.Start();
     }
-    private void LoadBustupModule(IUnrealEssentials unreal, string modDir, int hairIndex, Module module = Module.Bustups)
+    private void BustupRedirects(int hairIndex)
     {
-        var submodule = hairIndex.ToString("00");
-        try
+        var glassesEnabled = hairIndex > 9;
+        var hairChanged = hairIndex > 0;
+
+        if (glassesEnabled)
         {
-            var modulePath = getModule(modDir, module);
-            var submodulePath = Path.Combine(modulePath, submodule);
-            if (Directory.Exists(submodulePath))
+            foreach (var texture in EyeTextures)
             {
-                if (Directory.Exists(Path.Combine(submodulePath, "P3R")))
-                {
-                    unreal.AddFromFolder(submodulePath);
-                }
+                var oldAsset = Assets.GetBustupPath(texture, Character.Fuuka);
+                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.Emote);
+                Redirect(oldAsset, newAsset);
             }
         }
-        catch (Exception ex)
+        if (hairChanged)
         {
-            if (getModule(modDir, module) == null)
+            foreach (var texture in BaseTextures)
             {
-                throw new ArgumentNullException($"No {module} module found", ex);
+                var oldAsset = Assets.GetBustupPath(texture, Character.Fuuka);
+                var newAsset = Assets.GetAltBustupPath(texture, Character.Fuuka, BustupComponent.BaseLayer, hairIndex);
+                Redirect(oldAsset, newAsset);
             }
         }
     }
@@ -276,48 +268,125 @@ public class Mod : ModBase // <= Do not Remove.
             throw new ArgumentNullException("Mod directory not found",e);
         }
     }
+    public static string[] BaseTextures = [
+        "T_BU_PC0006_PoseA_C001",
+        "T_BU_PC0006_PoseA_C002",
+        "T_BU_PC0006_PoseA_C005",
+        "T_BU_PC0006_PoseA_C006",
+        "T_BU_PC0006_PoseA_C052",
+        "T_BU_PC0006_PoseA_C102",
+        "T_BU_PC0006_PoseA_C154",
+        "T_BU_PC0006_PoseA_C155",
+        "T_BU_PC0006_PoseA_C156",
+        "T_BU_PC0006_PoseB_C001",
+        "T_BU_PC0006_PoseB_C002",
+        "T_BU_PC0006_PoseB_C005",
+        "T_BU_PC0006_PoseB_C006",
+        "T_BU_PC0006_PoseB_C052",
+        "T_BU_PC0006_PoseB_C102",
+        "T_BU_PC0006_PoseB_C154",
+        "T_BU_PC0006_PoseB_C155",
+        "T_BU_PC0006_PoseB_C156",
+    ];
+    public static string[] EyeTextures = [
+        "T_BU_PC0006_F00_C900_E1",
+        "T_BU_PC0006_F00_C900_E2",
+        "T_BU_PC0006_F00_C900_E3",
+        "T_BU_PC0006_F00_C901_E1",
+        "T_BU_PC0006_F00_C901_E2",
+        "T_BU_PC0006_F00_C901_E3",
+        "T_BU_PC0006_F01_C900_E1",
+        "T_BU_PC0006_F01_C900_E2",
+        "T_BU_PC0006_F01_C900_E3",
+        "T_BU_PC0006_F02_C900_E1",
+        "T_BU_PC0006_F02_C900_E2",
+        "T_BU_PC0006_F02_C900_E3",
+        "T_BU_PC0006_F03_C900_E1",
+        "T_BU_PC0006_F03_C900_E2",
+        "T_BU_PC0006_F03_C900_E3",
+        "T_BU_PC0006_F04_C052_M1",
+        "T_BU_PC0006_F04_C052_M2",
+        "T_BU_PC0006_F04_C052_M3",
+        "T_BU_PC0006_F04_C900_E1",
+        "T_BU_PC0006_F04_C900_E2",
+        "T_BU_PC0006_F04_C900_E3",
+        "T_BU_PC0006_F04_C900_M1",
+        "T_BU_PC0006_F04_C900_M2",
+        "T_BU_PC0006_F04_C900_M3",
+        "T_BU_PC0006_F05_C900_E1",
+        "T_BU_PC0006_F06_C900_E1",
+        "T_BU_PC0006_F06_C900_E2",
+        "T_BU_PC0006_F06_C900_E3",
+        "T_BU_PC0006_F08_C052_M1",
+        "T_BU_PC0006_F08_C052_M2",
+        "T_BU_PC0006_F08_C052_M3",
+        "T_BU_PC0006_F08_C900_E1",
+        "T_BU_PC0006_F08_C900_E2",
+        "T_BU_PC0006_F08_C900_E3",
+        "T_BU_PC0006_F08_C900_M1",
+        "T_BU_PC0006_F08_C900_M2",
+        "T_BU_PC0006_F08_C900_M3",
+        "T_BU_PC0006_F10_C900_E1",
+        "T_BU_PC0006_F10_C900_E2",
+        "T_BU_PC0006_F10_C900_E3",
+        "T_BU_PC0006_F11_C052_M1",
+        "T_BU_PC0006_F11_C052_M2",
+        "T_BU_PC0006_F11_C052_M3",
+        "T_BU_PC0006_F11_C900_E1",
+        "T_BU_PC0006_F11_C900_M1",
+        "T_BU_PC0006_F11_C900_M2",
+        "T_BU_PC0006_F11_C900_M3",
+        "T_BU_PC0006_F30_C052_M1",
+        "T_BU_PC0006_F30_C052_M2",
+        "T_BU_PC0006_F30_C052_M3",
+        "T_BU_PC0006_F30_C900_E1",
+        "T_BU_PC0006_F30_C900_M1",
+        "T_BU_PC0006_F30_C900_M2",
+        "T_BU_PC0006_F30_C900_M3",
+        "T_BU_PC0006_F31_C900_E1",
+    ];
 
 
-    public static void LoadOverride(ICostumeApi costumeApi, string moduleDir, string overrideFile = "CostumeOverride.yaml")
-    {
-
-        var _override = Path.Join(moduleDir, overrideFile);
-
-        costumeApi.AddOverridesFile(_override);
-    }
-
-    public void InitOverrides(string folder, ICostumeApi costumeApi, Config config)
-    {
-        var thisFolder = folder;
-
-        var overrideFolder = Path.Join(thisFolder, "Overrides");
-
-        var overrideFiles = Directory.GetFiles(overrideFolder, "*.yaml");
-
-        foreach (var overrideFile in overrideFiles)
+    /*    public static void LoadOverride(ICostumeApi costumeApi, string moduleDir, string overrideFile = "CostumeOverride.yaml")
         {
-            var file = Path.GetFileName(overrideFile);
-            var option = Path.GetFileNameWithoutExtension(overrideFile);
 
-            if (Enum.IsDefined(typeof(NewOutfits), option))
+            var _override = Path.Join(moduleDir, overrideFile);
+
+            costumeApi.AddOverridesFile(_override);
+        }
+
+        public void InitOverrides(string folder, ICostumeApi costumeApi, Config config)
+        {
+            var thisFolder = folder;
+
+            var overrideFolder = Path.Join(thisFolder, "Overrides");
+
+            var overrideFiles = Directory.GetFiles(overrideFolder, "*.yaml");
+
+            foreach (var overrideFile in overrideFiles)
             {
-                var enumOption = (NewOutfits)Enum.Parse(typeof(NewOutfits), option);
-                if (optionBool(enumOption, config))
+                var file = Path.GetFileName(overrideFile);
+                var option = Path.GetFileNameWithoutExtension(overrideFile);
+
+                if (Enum.IsDefined(typeof(NewOutfits), option))
                 {
-                    LoadOverride(costumeApi, overrideFolder, file);
+                    var enumOption = (NewOutfits)Enum.Parse(typeof(NewOutfits), option);
+                    if (optionBool(enumOption, config))
+                    {
+                        LoadOverride(costumeApi, overrideFolder, file);
+                    }
                 }
             }
         }
-    }
 
 
-    public bool optionBool(NewOutfits outfit, Config config)
-    => outfit switch
-    {
-        NewOutfits.UNSC_Parka => config.UNSC_Parka,
-        _ => throw new NotImplementedException(),
-    };
-
+        public bool optionBool(NewOutfits outfit, Config config)
+        => outfit switch
+        {
+            NewOutfits.UNSC_Parka => config.UNSC_Parka,
+            _ => throw new NotImplementedException(),
+        };
+    */
     private record class AssetIDFuuka (AssetType Type, int AssetID)
     {
 
