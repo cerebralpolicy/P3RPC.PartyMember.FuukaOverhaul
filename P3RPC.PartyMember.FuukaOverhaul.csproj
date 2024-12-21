@@ -106,17 +106,22 @@
 
   <ItemGroup>
     <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\config.yaml" />
-    <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\costume-mesh.uasset" />
     <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\description.msg" />
-    <Content Remove="UnrealEssentials\P3R\Content\CostumeDefines\Fuuka\Halo_Outfit\hair-mesh.uasset" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="Submodules\P3R.CostumeFramework\P3R.CostumeFramework.Interfaces\P3R.CostumeFramework.Interfaces.csproj" />
     <ProjectReference Include="Submodules\Unreal.ObjectsEmitter\Unreal.ObjectsEmitter.Interfaces\Unreal.ObjectsEmitter.Interfaces.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Modules\02_Costumes\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Overrides\UNSC_Parka.yaml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 </Project>

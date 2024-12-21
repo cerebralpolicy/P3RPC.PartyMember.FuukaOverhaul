@@ -10,6 +10,7 @@ using UnrealEssentials.Interfaces;
 //using P3R.CostumeFramework.Interfaces;
 using System.Drawing;
 using Reloaded.Memory.SigScan.ReloadedII.Interfaces;
+using Reloaded.Mod.Interfaces.Internal;
 
 namespace P3RPC.PartyMember.FuukaOverhaul;
 
@@ -63,7 +64,7 @@ public class Mod : ModBase // <= Do not Remove.
 
     public const string modName = "P3RPC.PartyMember.FuukaOverhaul";
 
-    public string? modDirectory;
+    public string modDirectory;
 
     public Mod(ModContext context)
     {
@@ -85,8 +86,8 @@ public class Mod : ModBase // <= Do not Remove.
         bool haveUnrealEssentials;
         bool haveUnrealEmitter;
         // SET MOD DIRECTORY
-        var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);  
-
+        var modDir = _modLoader.GetDirectoryForModId(_modConfig.ModId);
+        modDirectory = modDir;
         var unrealEssentialsController = _modLoader.GetController<IUnrealEssentials>();
         if (unrealEssentialsController == null || !unrealEssentialsController.TryGetTarget(out var unrealEssentials))
         {
@@ -166,8 +167,29 @@ public class Mod : ModBase // <= Do not Remove.
                 LoadBustups(newNormalHair, unrealEssentials, modDir);
             }
         }
+        var enabledMods = this._modLoader.GetAppConfig().EnabledMods;
+        if (enabledMods.Contains("P3R.CostumeFramework"))
+        {
+             var costumeApiController = _modLoader.GetController<P3R.CostumeFramework.Interfaces.ICostumeApi>();
+        if (costumeApiController != null && costumeApiController.TryGetTarget(out var costumeApi))
+        {
+            void AddOverride(string path) => costumeApi.AddOverridesFile($"{path}.yaml");
+            if (_configuration.UNSC_Parka)
+            {
+                AddOverride(Path.Join(modDir, "Overrides", nameof(_configuration.UNSC_Parka)));
+            }            
+        }
+        }
         Project.Start();
     }
+    /// <summary>
+    /// Optional loading of costumes. 
+    /// </summary>
+    private void Costumes()
+    {
+       
+    }
+
     private void LoadBustups(int hairIndex, IUnrealEssentials unreal, string modDir)
     {
         var glassesEnabled = hairIndex > 9;
@@ -184,11 +206,11 @@ public class Mod : ModBase // <= Do not Remove.
             hairFlag |= HairFlag.Ponytail;
             GetBustupPack(unreal, modDir, hairFlag);
         }
-        else if (!hairChanged)
+        else if (!hairChanged && glassesEnabled)
         {
             hairFlag |= HairFlag.Vanilla;
+            GetBustupPack(unreal,modDir, hairFlag);
         }
-
     }
     private void GetBustupPack(IUnrealEssentials unreal, string modDir, HairFlag flag)
     {        

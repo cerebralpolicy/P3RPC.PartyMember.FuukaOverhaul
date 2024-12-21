@@ -15,7 +15,7 @@
   "PluginData": {},
   "IsUniversalMod": false,
   "ModDependencies": [ "Reloaded.Memory.SigScan.ReloadedII", "reloaded.sharedlib.hooks", "UnrealEssentials", "Unreal.ObjectsEmitter.Reloaded" ],
-  "OptionalDependencies": [  ],
+  "OptionalDependencies": [ "P3R.CostumeFramework" ],
   "SupportedAppId": ["p3r.exe"],
   "ProjectUrl": ""
 }

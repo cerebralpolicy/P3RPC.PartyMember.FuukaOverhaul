@@ -41,6 +41,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "P3RPC.PartyMember.FuukaOver
 		{D5C78B46-4866-411C-BF05-AB1D9679BE44} = {D5C78B46-4866-411C-BF05-AB1D9679BE44}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Testing", "Testing", "{9620EE30-8F25-4364-BDDD-A3C70AAEF69F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
